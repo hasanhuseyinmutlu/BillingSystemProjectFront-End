@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="col-md-12">
+        <header>
+            <br>
+        </header>
+        <main>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+                <div class="col d-flex flex-row"  *ngFor="let msg of message" >
+                    <div class="card mb-5 rounded-3 shadow-sm">
+                        <div class="card-body">
+                            <div class="col d-flex flex-row">
+                              <div>
+                                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                                  <i class="ni ni-satisfied"></i>
+                                </div>
+                              </div>
+                              <div class="pl-4">
+                                <h5 class="title text-success">{{msg.receiverId}}</h5>
+                                <p>{{msg.content}}</p>
+                                <a href="javascript:void(0)" class="text-success">Learn more</a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>      
+        </main>
+    </div>
+</div>

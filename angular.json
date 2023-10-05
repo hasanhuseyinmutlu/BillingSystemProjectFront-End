@@ -30,9 +30,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/argon-design-system.min.css",
+              "src/assets/scss/argon.scss",
+              "./node_modules/ngx-toastr/toastr.css",
+              "./styles.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -100,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "eba601c3-6d89-4c9a-98c9-2d09afd6a30f"
   }
 }

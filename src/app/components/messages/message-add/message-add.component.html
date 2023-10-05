@@ -1,0 +1,35 @@
+<div class="modal fade" id="message-addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Mesaj Gönder</h5>
+        <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="messageAddForm" (ngSubmit)="add()">
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>receiver Id</label>
+              <input formControlName="receiverId" type="text" class="form-control" placeholder="">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Sender Id</label>
+              <input formControlName="senderId" type="text" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="input-group">
+            <textarea formControlName="content" class="form-control" placeholder="metin girin"></textarea>
+          </div>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-md-7">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

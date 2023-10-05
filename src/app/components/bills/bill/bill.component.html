@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="col " *ngFor="let bill of bills">
+      <div class="card card--hover shadow mb-3">
+        <div class="card-body ">
+          <div>
+            <button (click)="deleteBill(bill)" class="btn btn-danger btn-sm" style="position: absolute; top: 0; right: 0;">
+              <i class="fa fa-trash fa-lg"></i>
+            </button>
+          </div>
+          <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
+            <i class="ni ni-single-copy-04"></i>
+          </div>
+          <!-- Edit Mode -->
+          <div *ngIf="bill.editMode">
+            <form (submit)="updateBill(bill)">
+              <div class="form-group">
+                <label for="type">Type:</label>
+                <input type="text" class="form-control" id="type" [(ngModel)]="bill.type" name="type">
+              </div>
+              <div class="form-group">
+                <label for="floor">apartmentId:</label>
+                <input type="text" class="form-control" id="apartmentId" [(ngModel)]="bill.apartmentId" name="apartmentId">
+              </div>
+              <div class="form-group">
+                <label for="apartmentNumber">Amount:</label>
+                <input type="text" class="form-control" id="amount" [(ngModel)]="bill.amount" name="amount">
+              </div>
+              <div class="form-group">
+                <label for="ownerOrTenant">Bill Date:</label>
+                <input  type="date" class="form-control form-control-alternative"
+                  id="billDate" name="billDate" [(ngModel)]="bill.billDate" placeholder="Bill Date">
+              </div>
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelEdit(bill)">Cancel</button>
+            </form>
+          </div>
+
+          <div *ngIf="!bill.editMode">
+            <h6 class="text-primary text-uppercase">{{ bill.type }}</h6>
+            <p class="description mt-3">
+              ID: {{ bill.id }}<br>
+              Apartment ID: {{ bill.apartmentId }}<br>
+            </p>
+            <div>
+              <a class="badge badge-pill badge-success lead "> {{ bill.amount | currency:"TRY":"₺" }}</a>
+              <br>
+              <br>
+              <span class="badge badge-pill badge-warning col-">{{ bill.billDate | date }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Add Edit Button -->
+        <button *ngIf="!bill.editMode" class="btn btn-button" (click)="editBill(bill)">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

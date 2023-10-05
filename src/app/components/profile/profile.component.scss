@@ -1,0 +1,38 @@
+.credit-card {
+  width: 300px;
+  height: 200px;
+  background-color: #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  margin: 20px;
+}
+
+.card-logo {
+  flex: 1;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.card-details {
+  flex: 3;
+  padding: 20px;
+}
+
+.card-number {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-holder {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-expiration {
+  font-size: 16px;
+}
+

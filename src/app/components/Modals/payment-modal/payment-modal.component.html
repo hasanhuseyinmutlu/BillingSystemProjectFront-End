@@ -1,0 +1,32 @@
+<div class="modal fade" id="payment-addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div></div>
+            <div class="modal-body" >
+                <form [formGroup]="paymentForm" (ngSubmit)="addPayment()">
+                        <div class="form-group col-md-4">
+                          <label>Id</label>
+                          <input formControlName="id" type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                              <label>customer Id</label>
+                              <input formControlName="customerId" type="text" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                      <div class="form-group col-md-4">
+                        <label for="block">Amount:</label>
+                        <input type="number" class="form-control" id="amount" formControlName="amount" name="amount">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="block">Payment Date:</label>
+                        <input type="date" class="form-control" id="amount" formControlName="paymentDate" name="paymentDate">
+                      </div>
+                    <button type="submit" class="btn btn-primary">Payment</button>
+                </form>
+            </div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        <div class="col " *ngFor="let due of apartmentDue">
+            <div class="card card-hover shadow mb-3">
+              <div class="card-body ">
+                <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                  <i class="ni
+                  ni-single-copy-04"></i>
+                </div>
+                
+                <h6 class="text-warning text-uppercase"><span>ApartmentBlock:</span><br>{{due.apartmentBlock}}</h6>
+                <p class="description mt-3 text-warning">
+                  <span class="text-warning ">Apartment No</span> <br>
+                  {{due.apartmentNumber}}
+                </p>
+                <div>
+                  <span class="badge badge-pill badge-warning">{{due.duesAmount | currency:"TRY":"₺"}}</span><br>
+                  <span class="badge badge-pill badge-warning col-">{{due.duesDate   }}</span>
+                 
+                </div>
+                <button  class="btn btn-sm btn-default float-right" data-bs-toggle="modal" data-bs-target="#payment-addModal"> Payment</button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+    

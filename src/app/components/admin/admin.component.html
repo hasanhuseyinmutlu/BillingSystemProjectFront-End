@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+            <!-- Sidebar Header -->
+            <span class="fs-4 mb-8">Admin</span> <!-- 'mb-2' sınıfı eklenmiştir -->
+            
+            <!-- Sidebar Links -->
+            <ul class="nav nav-pills flex-column mb-auto mt-5"> <!-- 'mt-2' sınıfı eklenmiştir -->
+                <li class="nav-item">
+                    <a href="/apartmentAdd" class="nav-link link-body-emphasis mt-3" >
+                        Apartments
+                    </a>
+                    <a routerLink="/billAdd"  class="nav-link link-body-emphasis mt-3" data-toggle="collapse" data-target="#billCollapse">
+                        Bills
+                    </a>
+                    <a routerLink="/customerAdd"  class="nav-link link-body-emphasis mt-3" data-toggle="collapse" data-target="#customerCollapse">
+                        Customers
+                    </a>
+                    <a routerLink="/dueAdd"  class="nav-link link-body-emphasis mt-3" data-toggle="collapse" data-target="#dueCollapse">
+                        Dues
+                    </a>  
+                </li>
+            </ul>
+        </div>
+        
+        
+
+        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container mt-6">
+                <div class="row row-grid align-items-center">
+                    <div class="col order-lg-2  mx-auto">
+                        <div class="position-relative">
+                            <img src="./assets/img/ill/ill-2.svg" class="img-center img-fluid">
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

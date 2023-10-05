@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="card-deck mb-3 text-center ">
+    <div class="col " *ngFor="let apartment of apartments ">
+      <div class="card border-light shadow mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+          <div>
+            <button (click)="deleteApartment(apartment)" class="btn btn-danger btn-sm" style="position: absolute; top: 0; right: 0;">
+              <i class="fa fa-trash fa-lg"></i>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
+              <i class="ni ni-building"></i>
+            </div>
+            <h5 class="card-title">Apartments</h5>
+
+            <!-- Düzenleme Modu Açıksa -->
+            <div *ngIf="apartment.editMode">
+              <form (submit)="updateApartment(apartment)">
+                <div class="form-group">
+                  <label for="customerId">Customer ID:</label>
+                  <input type="text" class="form-control" id="customerId" [(ngModel)]="apartment.customerId" name="customerId">
+                </div>
+                <div class="form-group">
+                  <label for="block">Block:</label>
+                  <input type="text" class="form-control" id="block" [(ngModel)]="apartment.block" name="block">
+                </div>
+                <div class="form-group">
+                  <label for="type">Type:</label>
+                  <input type="text" class="form-control" id="type" [(ngModel)]="apartment.type" name="type">
+                </div>
+                <div class="form-group">
+                  <label for="floor">Floor:</label>
+                  <input type="text" class="form-control" id="floor" [(ngModel)]="apartment.floor" name="floor">
+                </div>
+                <div class="form-group">
+                  <label for="apartmentNumber">Apartment Number:</label>
+                  <input type="text" class="form-control" id="apartmentNumber" [(ngModel)]="apartment.apartmentNumber" name="apartmentNumber">
+                </div>
+                <div class="form-group">
+                  <label for="ownerOrTenant">Owner/Tenant:</label>
+                  <input type="text" class="form-control" id="ownerOrTenant" [(ngModel)]="apartment.ownerOrTenant" name="ownerOrTenant">
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" class="form-check-input" id="isOccupied" [(ngModel)]="apartment.isOccupied" name="isOccupied">
+
+                  <label for="isOccupied">Is Occupied:</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+                <button type="button" class="btn btn-secondary" (click)="cancelEdit(apartment)">İptal</button>
+              </form>
+            </div>
+
+            <!-- Düzenleme Modu Kapalıysa, Verileri Göster -->
+            <p *ngIf="!apartment.editMode" class="card-text font-weight-bold">
+              <span class="badge badge-default">CustomerId </span>
+              {{apartment.customerId}}<br>
+              <span class="badge badge-default">Block</span>
+              {{apartment.block}}<br>
+              <span class="badge badge-default">Type</span>
+              {{apartment.type}}<br>
+              <span class="badge badge-default">Floor</span>
+              {{apartment.floor}}<br>
+              <span class="badge badge-default">ApartmentNumber</span>
+              {{apartment.apartmentNumber}}<br>
+              <span class="badge badge-default">Owner</span>
+              {{apartment.ownerOrTenant}}<br>
+              <span class="badge badge-default">IsOccupied</span>
+              {{apartment.isOccupied}}
+            </p>
+
+          </div>
+          <div>
+            <!-- Düzenleme Modu Kapalıysa, Düzenle Butonunu Göster -->
+            <button *ngIf="!apartment.editMode" class="btn btn-button" (click)="editApartment(apartment)">Düzenle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

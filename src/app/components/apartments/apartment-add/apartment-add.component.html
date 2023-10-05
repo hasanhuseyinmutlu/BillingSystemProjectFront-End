@@ -1,0 +1,89 @@
+<section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+</section>
+
+<!-- apartment-add.component.html -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-home"></i> Apartman Ekleme
+          </div>
+          <div class="card-body">
+            <form [formGroup]="apartmentAddForm" (ngSubmit)="add()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName="block" type="text" class="form-control form-control-alternative" placeholder="Block">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName="type" type="text" class="form-control form-control-alternative" placeholder="Type">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName="floor" type="number" class="form-control form-control-alternative" placeholder="Floor">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName="isOccupied" type="checkbox" class="form-check-input" id="isOccupied">
+                    <label class="form-check-label" for="isOccupied">Is Occupied</label>
+                    <div *ngIf="apartmentAddForm.get('isOccupied').value" class="checkmark">
+                      <i class="fa fa-check"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName="apartmentNumber" type="number" class="form-control form-control-alternative" placeholder="Apartment Number">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="ownerOrTenant">Owner or Tenant</label>
+                    <select formControlName="ownerOrTenant" class="form-control form-control-alternative" id="ownerOrTenant">
+                      <option disabled selected value="">Owner or Tenant</option>
+                      <option value="Owner">Owner</option>
+                      <option value="Tenant">Tenant</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input formControlName="customerId" type="number" class="form-control form-control-alternative" placeholder="Customer ID">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

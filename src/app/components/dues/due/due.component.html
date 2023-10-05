@@ -1,0 +1,60 @@
+<p>due component works!</p>
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="col " *ngFor="let due of dues ">
+      <div class="card card-hover shadow mb-3">
+        <div class="card-body ">
+
+          <button (click)="deleteDue(due)" class="btn btn-danger btn-sm"
+            style="position: absolute; top: 0; right: 0;"><i class="fa fa-trash fa-lg"></i></button>
+
+          <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
+            <i class="ni
+                  ni-single-copy-04"></i>
+          </div>
+
+          <!--edit mode-->
+          <div *ngIf="due.editMode">
+            <form>
+              <div class="form-group">
+                <label for="id">Id:</label>
+                <input type="text" class="form-control" id="id" [(ngModel)]="due.id" name="id">
+              </div>
+              <div class="form-group">
+                <label for="id"></label>
+                <input type="number" class="form-control" id="amount" [(ngModel)]="due.amount" name="Amount">
+              </div>
+              <div class="form-group">
+                <label for="apartmentId">ApartmentId</label>
+                <input type="text" class="form-control" id="ApartmentId" [(ngModel)]="due.apartmentId"
+                  name="apartmentId">
+              </div>
+              <div class="form-group">
+                <label for="duesDate">DuesDate:</label>
+                <input type="date" class="form-control" id="duesDate" [(ngModel)]="due.duesDate" name="DuesDate">
+              </div>
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelEdit(due)">Cancel</button>
+            </form>
+          </div>
+          <!--off edit mode -->
+          <div *ngIf="!due.editMode">
+            <h6 class="text-warning text-uppercase"><span>ApartmentBlock:</span><br>{{due.id}}</h6>
+            <p class="description mt-3 text-warning">
+              <span class="text-warning ">Apartment Id</span> <br>
+              {{due.apartmentId}}
+            </p>
+            <div>
+              <span class="badge badge-pill badge-warning">{{due.amount| currency:"TRY":"₺"}}</span><br>
+              <span class="badge badge-pill badge-warning col-">{{due.duesDate | date }}</span>
+
+            </div>
+            <a href="javascript:void(0)" class="btn btn-warning mt-4">Learn more</a>
+          </div>
+        </div>
+        <!--Add Edit Button -->
+      <button *ngIf="!due.editMode" class="btn btn-button" (click)="editDue(due)">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
