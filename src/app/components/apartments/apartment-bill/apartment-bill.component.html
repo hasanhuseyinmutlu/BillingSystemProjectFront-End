@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card-deck mb-3 text-center">
-        <div class="col " *ngFor="let bill of apartmentBill ">
+        <div class="col " *ngFor="let bill of billDetail ">
             <div class="card card-hover shadow mb-3">
               <div class="card-body ">
                 <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
@@ -8,7 +8,7 @@
                   ni-single-copy-04"></i>
                 </div>
                 
-                <h6 class="text-success text-uppercase">{{bill.billTytpe}}</h6>
+                <h6 class="text-success text-uppercase">{{bill.billType}}</h6>
                 <p class="description mt-3 text-success">
                   <span>Apartment No</span><br>
                   {{bill.apartmentNumber}}<br>
