@@ -46,7 +46,7 @@ export class ApartmentBillComponent implements OnInit{
       response =>{
         this.billDetail = response.data;
       }, responseError =>{
-        console.log(responseError)
+        console.log(responseError);
       }
     )
   }

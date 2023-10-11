@@ -7,6 +7,7 @@ import { ApartmentDue } from '../models/apartmentDue';
 import { ApartmentBill } from '../models/apartmentBill';
 import { ResponseModel } from '../models/responseModel';
 import { ApartmentBillDetail } from '../models/apartmentBillDetail';
+import { ApartmentDueDetail } from '../models/apartmentDueDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,13 @@ export class ApartmentService {
   {
     let newPath = this.apiUrl +'Apartment/getapartbillbyid/'+userId
     return this.httpClient.get<ListResponseModel<ApartmentBillDetail>>(newPath);
+  }
+
+  getApartmentDueById(userId : number)
+  :Observable<ListResponseModel<ApartmentDueDetail>>
+  {
+    let newPath = this.apiUrl + 'apartment/getapartduebyid/'+userId
+    return this.httpClient.get<ListResponseModel<ApartmentDueDetail>>(newPath);
   }
 
   add(apartment:Apartment):Observable<ResponseModel>{
