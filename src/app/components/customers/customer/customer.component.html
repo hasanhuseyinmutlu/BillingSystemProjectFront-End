@@ -10,7 +10,18 @@
                     <div class="card-header py-3">
                       <h4 class="my-0 fw-normal">User</h4>
                     </div>
-                    <div class="card-body ">
+
+                    <div *ngIf="customer.editMode">
+                        <form>
+                          <div class="form-group">
+                            <label for=""></label>
+                            <input type="" class="form-control" id="id" [(ngModel)] = "customer.id" name="id">
+                          </div>
+                          <button type="button" class="btn btn-secondary" (click)="cancelEdit(customer)">Cancel</button>
+                        </form>
+                    </div>
+
+                    <div *ngIf="!customer.editMode" class="card-body ">
                       <h1 class="card-title  card-title">{{customer.lastName}}<small class="text-body fw-light ">{{customer.firstName}}</small></h1>
 
                       <div class="row justify-content-center " >
@@ -31,7 +42,7 @@
                             <input type="text" readonly class="form-control-plaintext center " style="width: 150px; color: #000; font-weight: bold;" value={{customer.plateNumber}}>
                         </div>
                       </div>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                      <button *ngIf="!customer.editMode" type="button" class="w-100 btn btn-lg btn-outline" (click) = "editCustomer(customer)">Edit</button>
                     </div>
                   </div>
                 </div>

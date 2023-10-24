@@ -51,4 +51,11 @@ export class CustomerComponent implements OnInit{
     )
   }
 
+  editCustomer(customer:Customer){
+    customer.editMode = true;
+  }
+  cancelEdit(customer:Customer){
+    customer.editMode =false;
+  }
+
 }
