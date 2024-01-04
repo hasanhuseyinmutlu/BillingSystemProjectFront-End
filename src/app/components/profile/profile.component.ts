@@ -21,16 +21,11 @@ import { ToastrService } from 'ngx-toastr';
 
 
 export class ProfileComponent implements OnInit {
-  userCart:UserCart[] = [];
 
   showDropdown: boolean = false;
 
-  toggleDropdown(){
-    this.showDropdown = !this.showDropdown;
-  }
 
   ngOnInit(): void {
-    this.getCarts();
     this.createCartAddform();
   
     const token = localStorage.getItem('token');
@@ -45,16 +40,6 @@ export class ProfileComponent implements OnInit {
   
 
   constructor (private cartService:UserCartService, private fromBuilder:FormBuilder, private customerService: CustomerService, private toastrService: ToastrService) { }
-  
-  
-  getCarts(){
-    this.cartService.getUserCart().subscribe(
-      response =>{
-
-        this.userCart = response.data;
-      }
-    )
-  }
 
   cartAddForm: FormGroup
   

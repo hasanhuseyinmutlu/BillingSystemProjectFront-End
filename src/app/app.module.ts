@@ -33,6 +33,7 @@ import { AuthInterceptor } from './interceptors.ts/auth.interceptor';
 import { LoadInterceptor } from './interceptors.ts/load.interceptor';
 import { LoginGuard } from './guards/login.guard';
 import { PaymentModalComponent } from './components/Modals/payment-modal/payment-modal.component';
+import { CardShowModalComponent } from './components/Modals/card-show-modal/card-show-modal.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { PaymentModalComponent } from './components/Modals/payment-modal/payment
     CardAddModalComponent,
     AdminComponent,
     PaymentModalComponent,
+    CardShowModalComponent,
   ],
   imports: [
     BrowserModule,

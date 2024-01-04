@@ -1,0 +1,40 @@
+<div class="modal fade" id="cardShowModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="card-logo">
+                    <i class="ni ni-credit-card"></i>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <ul class="dropdown-content" >
+                        <div class="container">
+                            <div class="row">
+                                <div class="col" *ngFor="let cart of customerCard  ">
+                                    <div class="credit-card ">
+                                        <div class="card-details">
+                                            <div class="card-number">
+                                                <span>**** **** ****</span> {{cart.cardNumber.slice(-4)}}
+                                            </div>
+                                            <div class="card-holder">{{cart.cardName}}</div>
+                                            <div class="card-expiration">
+                                                <i class="ni ni-calendar-grid-58"></i> {{ cart.expirationDate |
+                                                date:'MM/yy'
+                                                }}
+                                            </div>
+                                            <div class="card-cvv">
+                                                CVV: {{cart.cvv}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>

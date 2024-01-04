@@ -39,42 +39,7 @@
                             customerInfo.mailAddress }}
                         </div>
                     </div>
-                    <div class="dropdown" (click)="toggleDropdown()">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Kartlarım
-                        </a>
-
-                        <ul class="dropdown-content" *ngIf="showDropdown">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col" *ngFor="let cart of userCart">
-                                        <div class="credit-card mb-1">
-                                            <div class="card-logo">
-                                                <i class="ni ni-credit-card"></i>
-                                            </div>
-                                            <div class="card-details">
-                                                <div class="card-number">
-                                                    <span>**** **** ****</span> {{cart.cardNumber.slice(-4)}}
-                                                </div>
-                                                <div class="card-holder">{{cart.cardHolder}}</div>
-                                                <div class="card-expiration">
-                                                    <i class="ni ni-calendar-grid-58"></i> {{ cart.expirationDate |
-                                                    date:'MM/yy'
-                                                    }}
-                                                </div>
-                                                <div class="card-cvv">
-                                                    CVV: {{cart.cvv}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
-
-
+                    <button  class="btn btn-sm btn-default float-right" data-bs-toggle="modal" data-bs-target="#cardShowModal"> Kartlarim</button> 
                 </div>
             </div>
         </div>
@@ -132,3 +97,4 @@
     <app-card-add-modal></app-card-add-modal>
     <app-message-add></app-message-add>
     <app-payment-modal></app-payment-modal>
+    <app-card-show-modal></app-card-show-modal>

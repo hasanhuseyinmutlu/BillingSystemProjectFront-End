@@ -1,0 +1,73 @@
+.modal-body {
+    font-size: 16px;
+    color: #333;
+}
+.modal-title {
+    font-size: 20px;
+    color: #007bff;
+}
+ /* credit-card component */
+.credit-card {
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+   }
+   
+   .card-logo {
+    display: inline-block;
+    margin-right: 10px;
+   }
+   
+   .card-details {
+    display: inline-block;
+    vertical-align: top;
+   }
+   
+   .card-number {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #495057;
+   }
+   
+   .card-holder {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #6c757d;
+   }
+   
+   .card-expiration {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #6c757d;
+   }
+   
+   .card-cvv {
+    font-size: 14px;
+    color: #6c757d;
+   }
+   
+   button {
+    font-size: 12px;
+    font-weight: bold;
+    color: #f8f9fa;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   }
+   
+   button:hover {
+    background-color: #0056b3;
+   }
+   
+   .card-logo i {
+    font-size: 30px;
+   }
